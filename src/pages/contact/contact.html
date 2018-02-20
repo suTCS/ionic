@@ -1,17 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      REST API
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2 id="id"> ID</ion-col>
+      <ion-col col-5 id="fName"> First Name</ion-col>
+      <ion-col col-5 id="lName"> Last Name</ion-col>
+    </ion-row>
+      <ion-row *ngFor="let user of (users$ | async)">
+        <ion-col col-2>
+            {{user.id}}
+        </ion-col>
+        <ion-col col-5>
+            {{user.fname}}
+        </ion-col>
+        <ion-col col-5>
+            {{user.lname}}
+        </ion-col>
+    </ion-row>
+    </ion-grid>
 </ion-content>
