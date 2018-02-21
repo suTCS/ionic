@@ -13,9 +13,7 @@
 <ion-content padding>
   <ion-list [reorder]="reorderIsEnabled" (ionItemReorder)="reorderItems($event)">
     <ion-item-sliding *ngFor="let todo of todos; let todoIndex = index">
-      <ion-item>
-        {{todo}}
-      </ion-item>
+      <ion-item> {{todo}} </ion-item>
       <ion-item-options side="right">
           <button ion-button (click)="edittodoo(todoIndex)"> <ion-icon name="create">
           </ion-icon>Edit</button>
@@ -24,6 +22,7 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-    <ion-fab right bottom><button ion-fab (click)="openTodoAlert()"><ion-icon name="add">
-</ion-icon></button></ion-fab>
+  <ion-fab right bottom><button ion-fab (click)="openTodoAlert()" color="dark">
+    <ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>

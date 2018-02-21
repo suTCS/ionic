@@ -21,9 +21,9 @@ export class AddingDetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad AddingDetailPage');
-  // }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad AddingDetailPage');
+  }
 
   goHome() {
     //this.navCtrl.push('adding-page');

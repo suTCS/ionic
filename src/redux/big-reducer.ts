@@ -1,7 +1,6 @@
 import * as fromUser from './reducer/userReducer';
 import {createSelector, createFeatureSelector} from '@ngrx/store'
 
-
 export interface State {
     user: fromUser.AppState;
 }

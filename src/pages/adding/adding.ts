@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TodoProvider } from '../../providers/todo/todo';
+import { SampleData } from '../../model/data';
 
 
 /**
@@ -19,12 +21,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private datas: SampleData[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private todoService: TodoProvider) {
+    
   }
 
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad AddingPage');
-  // }
+  ionViewDidLoad() {
+    // this.todoService.getUser2().subscribe((datas) => {
+    //   console.log(datas);
+    //   this.datas = datas;
+    // },
+    //   (error) => {
+    //   console.log(error);
+    // },
+    // () => {
+    //   //console.log('success');
+    // });
+  }
 
   goBack() {
     this.navCtrl.push('AddingDetailPage');

@@ -4,20 +4,21 @@ import { TodoProvider } from '../../providers/todo/todo';
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'about.html'
+  templateUrl: 'todoPage.html'
 })
-export class AboutPage {
+export class todoPage {
   public todos = [];
   public reorderIsEnabled = false;
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController,
-private todoService: TodoProvider, private toastCtrl: ToastController) {
-  this.todos = this.todoService.getTodos();
+    private todoService: TodoProvider, private toastCtrl: ToastController) {
+    this.todos = this.todoService.getTodos();
   }
+
   openTodoAlert() {
     let addTodoAlert = this.alertCtrl.create({
-      title: "Add a Todo",
-      subTitle: "Add a Todo list one by one",
+      title: "Add A Todo",
+      subTitle: "Add A Todo list one by one",
       message: "Enter your Todo",
       inputs: [
         {
@@ -64,9 +65,6 @@ private todoService: TodoProvider, private toastCtrl: ToastController) {
     this.todos = reorderArray(this.todos, indexes);
   }
 
-  // gotoArchivePage() {
-  //   this.navCtrl.push('ArchivedTodosPage');
-  // }
   deleteTodo(index) {
     this.todoService.deletetodo(index);
   }
@@ -74,7 +72,7 @@ private todoService: TodoProvider, private toastCtrl: ToastController) {
   edittodoo(index) {
     let editTodoAlert = this.alertCtrl.create({
       title: "Edit a Todo",
-      subTitle: "Edit a Todo list",
+      subTitle: "Edit A Todo list",
       message: "Edit your Todo",
       inputs: [
         {

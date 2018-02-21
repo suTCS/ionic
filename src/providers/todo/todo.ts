@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-//import {Response, Headers, RequestOptions} from '@angular/http';
+
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../model/user';
-//import { catchError, map, tap } from 'rxjs/operators';
-//import 'rxjs/add/operator/catch';
+
+//import { SampleData } from '../../model/data';
+
 import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/map';
-//import {Http} from '@angular/http';
 
 /*
   Generated class for the TodoProvider provider.
@@ -19,8 +18,7 @@ import 'rxjs/add/operator/map';
 export class TodoProvider {
   private todos = [];
   private baseUrl: string = 'http://localhost:9090/api';
-  //private headers = new Headers({'Content-Type': 'application/json'});
-  //private options = new RequestOptions({headers: this.headers});
+  //private dataUrl: string = 'https://reqres.in/api/users/2';
 
   constructor(public http: HttpClient) {
     
@@ -47,6 +45,12 @@ export class TodoProvider {
             //.map((response: Response) => response.json())  //angular 5 removes map(res => res.json())
             .catch(this.errorHandler);
   }
+  
+  // getUser2(): Observable<SampleData[]> {
+  //   return this.http.get(this.dataUrl)
+  //   .catch(this.errorHandler);
+  // }
+
   private errorHandler(err: Response) {
     //console.error(err);
     return Observable.throw(err || 'Some error on Server occured');

@@ -1,7 +1,6 @@
 import { User } from "../../model/user";
 import * as listuseractions from '../action/userAction';
 
-
 export type Action = listuseractions.Actions;
 
 export const initialState: AppState = {
@@ -9,7 +8,6 @@ export const initialState: AppState = {
     loading: false,
     loaded: true
 }
-
 
 export interface AppState {
     entities: User[],
@@ -30,8 +28,8 @@ export function listuserReducer(state: AppState = initialState, action: Action) 
         default: {
             return state; }
         }
-      }
+    }
       
-      export const getUsers = (state: AppState) => state.entities;
-      export const getLoading = (state: AppState ) => state.loading;
-      export const getLoaded = (state: AppState ) => state.loaded;
+export const getUsers = (state: AppState) => state.entities;
+export const getLoading = (state: AppState ) => state.loading;
+export const getLoaded = (state: AppState ) => state.loaded;

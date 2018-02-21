@@ -1,12 +1,13 @@
-import {Action} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { User } from '../../model/user';
 
 export interface PayloadAction extends Action {payload: string};
+
 export const GET_USERS = '[Gett] Users';
 export const GET_USERS_SUCCESS = '[Gett] Users success';
 export const GET_USERS_FAIL = '[Get] users fail';
 
-export class GetUsers implements Action {
+  export class GetUsers implements Action {
     readonly type = GET_USERS;
     consturctor() {}
   }
